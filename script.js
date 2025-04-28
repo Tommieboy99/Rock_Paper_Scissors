@@ -1,6 +1,9 @@
 function getHumanChoice () {
-    let userInput = prompt("Rock, paper, scissors?");
+    let userInput = prompt("rock, paper, scissors?");
+    return userInput
 }
+
+console.log(getHumanChoice())
 
 function getComputerChoice () {
     const randomNumber = Math.floor(Math.random()*3);
@@ -13,3 +16,5 @@ function getComputerChoice () {
         return "scissors";
     }
 }
+
+console.log(getComputerChoice())
