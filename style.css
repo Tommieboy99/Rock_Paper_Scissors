@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background-color: burlywood;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#pScore {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonHuman {
+    margin: 10px 0px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#buttonRock,
+#buttonPaper,
+#buttonScissors {
+    padding: 10px 20px;
+    background-color: lightyellow;
+    border-radius: 8px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+}
+
