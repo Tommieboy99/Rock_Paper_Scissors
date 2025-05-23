@@ -1,13 +1,13 @@
-//Here I call the function playRound with Rock/Paper/Scissors when the button is clicked.
-buttonRock.addEventListener("click", () => playRound("Rock"));
+//Here the function playRound is called with Rock/Paper/Scissors when the button is clicked.
+buttonRock.addEventListener("click", () => playRound("rock"));
 buttonPaper.addEventListener("click", () => playRound("paper"));
 buttonScissors.addEventListener("click", () => playRound("scissors"));
 
-// Elementen voor score en resultaat selecteren
+// Selecting HTML atributes to show the total score and result of the round
 const totalScoreDiv = document.querySelector(".totalScore p");
 const resultDiv = document.querySelector(".result");
 
-//functie om de random-keuze van de computer te krijgen
+//Here the function gets a random choice between rock/paper/scissors.
 function getComputerChoice () {
     const randomNumber = Math.floor(Math.random()*3);
     
@@ -27,7 +27,6 @@ let computerScore = 0;
 //
 function playRound (humanChoice) {
     const computerChoice = getComputerChoice(); //hier haal ik de computerkeuze op voor de playround
-    humanChoice = humanChoice.toLowerCase();
 
     let resultText = "Result: ";
     
@@ -43,7 +42,7 @@ function playRound (humanChoice) {
         resultText = "You win! Paper beats rock!";
         humanScore++;
     } else {
-        resultText = "You lose!";
+        resultText = `You lose! ${computerChoice[0].toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`;
         computerScore++;
     }
 
@@ -51,10 +50,10 @@ function playRound (humanChoice) {
 
     totalScoreDiv.textContent = `You: ${humanScore} - Computer: ${computerScore}`;
 
-    // Check if someone reached 5 points
+    // Check if someone reached 5 points, wins the game!
     if (humanScore === 5 || computerScore === 5) {
         const winner = humanScore === 5 ? "You win the game!" : "Computer wins the game!";
-        resultDiv.textContent = `🎉 ${winner} Final Score - You: ${humanScore}, Computer: ${computerScore}`;
+        resultDiv.textContent = `🎉 Final Score - You: ${humanScore}, Computer: ${computerScore}`;
         humanScore = 0;
         computerScore = 0;
     }
